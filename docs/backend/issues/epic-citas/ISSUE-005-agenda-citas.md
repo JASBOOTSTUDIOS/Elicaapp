@@ -58,5 +58,5 @@ Ver la [historia de usuario completa](../historias-usuario/US-005-agenda-citas.m
 
 ---
 
-_Ultima actualizacion: Diciembre 2025_  
+_Ultima actualizacion: Diciembre 12-04-2025_ 
 _Version: 1.0.0_

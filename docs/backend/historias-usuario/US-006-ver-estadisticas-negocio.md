@@ -67,7 +67,7 @@ export interface BusinessStatsDto {
 }
 
 export interface RevenueByPeriod {
-  period: string; // "2024-01", "2024-02", etc.
+  period: string; // "2025-01", "2025-02", etc.
   revenue: number;
   count: number;
 }
@@ -486,5 +486,5 @@ router.get(
 
 ---
 
-_Última actualización: Diciembre 2024_  
+_Última actualización: Diciembre 2025_  
 _Versión: 1.0.0_

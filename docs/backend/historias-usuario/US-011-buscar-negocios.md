@@ -215,6 +215,6 @@ async searchBusinesses(req: Request, res: Response): Promise<void> {
 
 ---
 
-_Última actualización: Diciembre 2024_  
+_Última actualización: Diciembre 2025_  
 _Versión: 1.0.0_
 

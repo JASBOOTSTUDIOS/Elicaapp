@@ -301,5 +301,5 @@ describe("POST /api/auth/login", () => {
 
 ---
 
-_Última actualización: Diciembre 2024_  
+_Última actualización: Diciembre 2025_  
 _Versión: 1.0.0_

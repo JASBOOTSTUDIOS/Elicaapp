@@ -283,6 +283,69 @@ US-XXX-nombre-historia.md
     - Sprint: Sprint 1 - Semana 2
     - Dependencias: US-024, US-025
 
+### **🔴 P0 - Críticas (MVP) - Gestión de Perfil y Negocios**
+
+41. **[US-041: Ver Mi Perfil](./US-041-ver-mi-perfil.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-002
+
+42. **[US-042: Ver Detalle de Mi Negocio](./US-042-ver-detalle-mi-negocio.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-003
+
+43. **[US-043: Listar Mis Negocios](./US-043-listar-mis-negocios.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-003
+
+44. **[US-044: Editar Servicio](./US-044-editar-servicio.md)**
+    - Story Points: 2
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-004
+
+### **🔴 P0 - Críticas (MVP) - Gestión de Horarios**
+
+45. **[US-045: Ver Horarios de un Negocio](./US-045-ver-horarios-negocio.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-013
+
+46. **[US-046: Eliminar Excepción de Horario](./US-046-eliminar-excepcion-horario.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-017
+
+47. **[US-047: Eliminar Pausa de Horario](./US-047-eliminar-pausa-horario.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-018
+
+48. **[US-048: Actualizar Excepción de Horario](./US-048-actualizar-excepcion-horario.md)**
+
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-017
+
+49. **[US-049: Actualizar Pausa de Horario](./US-049-actualizar-pausa-horario.md)**
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 2
+    - Dependencias: US-018
+
+### **🔴 P0 - Críticas (MVP) - Validaciones**
+
+50. **[US-050: Validar Email Único al Registrar](./US-050-validar-email-unico.md)**
+    - Story Points: 1
+    - Sprint: Sprint 1 - Semana 1
+    - Dependencias: US-001
+
 ---
 
 ## 🎯 Cómo Trabajar con las Historias
@@ -357,8 +420,18 @@ US-XXX-nombre-historia.md
 | US-038   | To Do  | -             | Sprint 1 | 2            |
 | US-039   | To Do  | -             | Sprint 1 | 1            |
 | US-040   | To Do  | -             | Sprint 1 | 2            |
+| US-041   | To Do  | -             | Sprint 1 | 1            |
+| US-042   | To Do  | -             | Sprint 1 | 1            |
+| US-043   | To Do  | -             | Sprint 1 | 1            |
+| US-044   | To Do  | -             | Sprint 1 | 2            |
+| US-045   | To Do  | -             | Sprint 1 | 1            |
+| US-046   | To Do  | -             | Sprint 1 | 1            |
+| US-047   | To Do  | -             | Sprint 1 | 1            |
+| US-048   | To Do  | -             | Sprint 1 | 1            |
+| US-049   | To Do  | -             | Sprint 1 | 1            |
+| US-050   | To Do  | -             | Sprint 1 | 1            |
 
-**Total Story Points**: 93 puntos
+**Total Story Points**: 103 puntos
 
 ---
 

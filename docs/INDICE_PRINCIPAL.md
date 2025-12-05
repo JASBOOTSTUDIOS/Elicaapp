@@ -4,9 +4,9 @@
 
 ElicaApp es una plataforma integral para la gestión de negocios de servicios, diseñada con una arquitectura moderna y escalable que incluye:
 
-- **🚀 Backend**: .NET Core 8.0+ con ASP.NET Core Web API
+- **🚀 Backend**: Express.js 4.18+ con TypeScript 5.0+
 - **📱 Frontend**: React Native 0.73+ con Expo y TypeScript
-- **🗄️ Base de Datos**: Supabase (PostgreSQL 15+) con Entity Framework Core
+- **🗄️ Base de Datos**: Supabase (PostgreSQL 15+) con Prisma/TypeORM
 
 ---
 
@@ -27,7 +27,7 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 ## 📁 **Estructura Organizada por Áreas**
 
 ### **🚀 [BACKEND](./backend/README.md)**
-*Stack .NET Core con Clean Architecture*
+*Stack Express.js + TypeScript con Clean Architecture*
 
 - **🏗️ Arquitectura**: [Arquitectura del Sistema](./backend/ARQUITECTURA.md)
 - **📅 Sprints**: [Sprints del Backend](./backend/SPRINTS_BACKEND.md)
@@ -36,10 +36,11 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 - **🚀 DevOps**: [CI/CD Pipeline](./backend/CI_CD.md)
 
 **Tecnologías Principales**:
-- .NET 8.0+ y ASP.NET Core Web API
-- Entity Framework Core 8.0+
-- JWT + Identity para autenticación
-- xUnit + Moq + FluentAssertions
+- Node.js 18+ y Express.js 4.18+
+- TypeScript 5.0+ para type safety
+- Prisma 5.0+ o TypeORM para ORM
+- JWT + Supabase Auth para autenticación
+- Jest + Supertest para testing
 - Clean Architecture + SOLID Principles
 
 ---
@@ -73,10 +74,10 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 
 **Tecnologías Principales**:
 - Supabase (PostgreSQL 15+)
-- Entity Framework Core 8.0+
+- Prisma 5.0+ o TypeORM 0.3+
 - Row Level Security (RLS)
 - Supabase Auth y Storage
-- Migraciones EF Core + Supabase
+- Migraciones Prisma/TypeORM + Supabase
 
 ---
 
@@ -109,7 +110,7 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 ### **📚 [Stack Tecnológico](./tecnica/STACK_TECNOLOGICO.md)**
 *Stack completo de tecnologías del proyecto*
 
-- **Backend**: .NET Core + ASP.NET Core + EF Core
+- **Backend**: Express.js + TypeScript + Prisma/TypeORM
 - **Frontend**: React Native + Expo + TypeScript
 - **Base de Datos**: Supabase + PostgreSQL
 - **DevOps**: Docker + GitHub Actions + CI/CD
@@ -165,11 +166,11 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 
 ### **🚧 En Progreso**
 - [ ] Configuración de proyecto Supabase
-- [ ] Setup de proyecto .NET Core
+- [ ] Setup de proyecto Express.js + TypeScript
 - [ ] Setup de proyecto React Native + Expo
 
 ### **📋 Próximos Pasos**
-1. **Configurar proyectos técnicos** (Supabase, .NET Core, React Native)
+1. **Configurar proyectos técnicos** (Supabase, Express.js + TypeScript, React Native)
 2. **Implementar MVP** según cronograma de 12 semanas
 3. **Testing y validación** de funcionalidades core
 4. **Deployment a producción** del MVP
@@ -207,10 +208,12 @@ ElicaApp es una plataforma integral para la gestión de negocios de servicios, d
 ## 📚 **Recursos y Referencias**
 
 ### **🔗 Enlaces Oficiales**
-- [.NET 8 Documentation](https://docs.microsoft.com/en-us/dotnet/)
+- [Express.js Documentation](https://expressjs.com/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
 - [React Native Documentation](https://reactnative.dev/)
 - [Supabase Documentation](https://supabase.com/docs)
 - [Expo Documentation](https://docs.expo.dev/)
+- [Prisma Documentation](https://www.prisma.io/docs)
 
 ### **📖 Documentación del Proyecto**
 - [Lógica de Negocio](./LOGICA_NEGOCIO.md)

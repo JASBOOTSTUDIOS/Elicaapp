@@ -13,89 +13,92 @@
 ## 🚀 **SPRINT 1: Configuración Base (Semanas 1-2)**
 
 ### **🎯 Objetivos del Sprint**
-- Configurar proyecto .NET Core
-- Conectar con Supabase
-- Implementar autenticación básica
-- Crear estructura de APIs
+- ⚙️ Configurar proyecto Express.js + TypeScript
+- 🗄️ Conectar con Supabase
+- 🔐 Implementar autenticación básica
+- 🔌 Crear estructura de APIs
 
 ### **📅 Desglose Diario**
 
 #### **Semana 1: Setup y Configuración**
 
 **Día 1: Configuración del Proyecto**
-- [ ] Crear solución .NET Core Web API
+- [ ] Crear proyecto Express.js con TypeScript
 - [ ] Configurar estructura de carpetas (Clean Architecture)
-- [ ] Instalar paquetes NuGet base
+- [ ] Instalar dependencias npm base
 - [ ] Configurar logging y configuración
 
 **Tareas Técnicas Detalladas**:
-- [ ] `dotnet new sln -n ElicaApp`
-- [ ] `dotnet new webapi -n ElicaApp.API`
-- [ ] `dotnet new classlib -n ElicaApp.Core`
-- [ ] `dotnet new classlib -n ElicaApp.Infrastructure`
-- [ ] `dotnet new classlib -n ElicaApp.Application`
-- [ ] Agregar proyectos a la solución
-- [ ] Instalar paquetes base: Microsoft.AspNetCore.Authentication.JwtBearer, Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Design
-- [ ] Configurar appsettings.json con logging
-- [ ] Configurar Program.cs con servicios base
-- [ ] Crear estructura de carpetas: Controllers, Services, Repositories, Models, DTOs, Middleware
+- [ ] `mkdir elicaapp-backend && cd elicaapp-backend`
+- [ ] `npm init -y` para crear package.json
+- [ ] `npm install express cors helmet dotenv`
+- [ ] `npm install -D typescript @types/express @types/node @types/cors ts-node nodemon`
+- [ ] Crear `tsconfig.json` con configuración TypeScript
+- [ ] Configurar scripts en package.json: `dev`, `build`, `start`
+- [ ] Crear estructura de carpetas: `src/routes`, `src/controllers`, `src/services`, `src/repositories`, `src/models`, `src/dto`, `src/middleware`
+- [ ] Crear archivo `.env.example` con variables de entorno
+- [ ] Configurar `src/app.ts` con Express básico
+- [ ] Configurar `src/server.ts` como punto de entrada
+- [ ] Configurar logging con Winston o Morgan
 
 **Entregables**:
-- Solución .NET Core creada
-- Estructura Clean Architecture implementada
-- Paquetes NuGet instalados
-- Logging configurado
-- Estructura de carpetas organizada
+- ✅ Proyecto Express.js + TypeScript creado
+- ✅ Estructura Clean Architecture implementada
+- ✅ Dependencias npm instaladas
+- ✅ Logging configurado
+- ✅ Estructura de carpetas organizada
 
 **Día 2: Conexión a Base de Datos**
-- [ ] Configurar Entity Framework Core
+- [ ] Configurar Prisma o TypeORM
 - [ ] Conectar con Supabase
-- [ ] Crear DbContext base
+- [ ] Crear schema base de datos
 - [ ] Configurar connection string
 
 **Tareas Técnicas Detalladas**:
-- [ ] Instalar paquetes EF Core: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Tools, Npgsql.EntityFrameworkCore.PostgreSQL
-- [ ] Crear clase ApplicationDbContext en Infrastructure
-- [ ] Configurar connection string en appsettings.json
-- [ ] Configurar DbContext en Program.cs con AddDbContext
-- [ ] Crear entidades base: User, Business, Service, Appointment
-- [ ] Configurar relaciones en OnModelCreating
-- [ ] Crear migración inicial: `dotnet ef migrations add InitialCreate`
-- [ ] Aplicar migración: `dotnet ef database update`
-- [ ] Test de conexión con endpoint simple
-- [ ] Validar que las tablas se crearon correctamente
+- [ ] Instalar Prisma: `npm install prisma @prisma/client` O TypeORM: `npm install typeorm pg reflect-metadata`
+- [ ] Inicializar Prisma: `npx prisma init` O configurar TypeORM
+- [ ] Configurar `DATABASE_URL` en `.env` con conexión a Supabase
+- [ ] Crear schema Prisma (`prisma/schema.prisma`) O entidades TypeORM
+- [ ] Definir modelos base: User, Business, Service, Appointment
+- [ ] Configurar relaciones entre modelos
+- [ ] Crear migración inicial: `npx prisma migrate dev --name init` O `typeorm migration:create`
+- [ ] Aplicar migración a Supabase
+- [ ] Generar cliente Prisma: `npx prisma generate` (si usas Prisma)
+- [ ] Crear endpoint de health check para testear conexión
+- [ ] Validar que las tablas se crearon correctamente en Supabase
 
 **Entregables**:
-- EF Core configurado y funcionando
-- Conexión a Supabase establecida
-- DbContext configurado con entidades
-- Migración inicial aplicada
-- Conexión validada y testeada
+- ✅ Prisma/TypeORM configurado y funcionando
+- ✅ Conexión a Supabase establecida
+- ✅ Schema base de datos creado con entidades
+- ✅ Migración inicial aplicada
+- ✅ Conexión validada y testeada
 
 **Día 3: Autenticación JWT**
-- [ ] Instalar paquetes de Identity
-- [ ] Configurar JWT Bearer
+- [ ] Instalar paquetes de JWT
+- [ ] Configurar JWT con Express
 - [ ] Crear modelos de usuario
 - [ ] Implementar login básico
 
 **Tareas Técnicas Detalladas**:
-- [ ] Instalar paquetes: Microsoft.AspNetCore.Identity.EntityFrameworkCore, Microsoft.AspNetCore.Authentication.JwtBearer
-- [ ] Crear clase ApplicationUser heredando de IdentityUser
-- [ ] Configurar JWT en appsettings.json (SecretKey, Issuer, Audience)
-- [ ] Configurar servicios de Identity en Program.cs
-- [ ] Crear AuthController con endpoints: /api/auth/login, /api/auth/register
-- [ ] Implementar servicio AuthService con lógica de login
-- [ ] Crear DTOs: LoginRequest, LoginResponse, RegisterRequest
-- [ ] Configurar JWT Bearer en Program.cs con AddAuthentication
-- [ ] Implementar validaciones con FluentValidation
-- [ ] Crear tests unitarios para AuthService
+- [ ] Instalar paquetes: `npm install jsonwebtoken bcryptjs` y `npm install -D @types/jsonwebtoken @types/bcryptjs`
+- [ ] Instalar Supabase client: `npm install @supabase/supabase-js`
+- [ ] Configurar variables JWT en `.env`: `JWT_SECRET`, `JWT_EXPIRES_IN`
+- [ ] Crear `src/config/jwt.ts` con configuración JWT
+- [ ] Crear `src/routes/auth.routes.ts` con endpoints: POST `/api/auth/login`, POST `/api/auth/register`
+- [ ] Crear `src/controllers/auth.controller.ts` con lógica de request/response
+- [ ] Crear `src/services/auth.service.ts` con lógica de negocio
+- [ ] Crear DTOs: `LoginDto`, `RegisterDto`, `AuthResponseDto`
+- [ ] Crear middleware `src/middleware/auth.middleware.ts` para validar JWT
+- [ ] Implementar validaciones con Zod: `src/validators/auth.validator.ts`
+- [ ] Crear tests unitarios para AuthService con Jest
 
 **Entregables**:
-- Sistema de autenticación JWT funcionando
-- Endpoints de login y registro implementados
-- Validaciones implementadas
-- Tests unitarios pasando
-- JWT configurado y funcionando
+- ✅ Sistema de autenticación JWT funcionando
+- ✅ Endpoints de login y registro implementados
+- ✅ Validaciones con Zod implementadas
+- ✅ Tests unitarios pasando
+- ✅ JWT configurado y funcionando
 
 **Día 4: Estructura de APIs**
 - [ ] Crear controladores base
@@ -104,78 +107,79 @@
 - [ ] Crear DTOs base
 
 **Tareas Técnicas Detalladas**:
-- [ ] Crear BaseController con métodos comunes
-- [ ] Crear UserController con endpoints básicos
-- [ ] Crear BusinessController con endpoints básicos
-- [ ] Implementar middleware de autenticación personalizado
-- [ ] Configurar Swagger en Program.cs con AddSwaggerGen
-- [ ] Crear DTOs base: BaseResponse, PaginatedResponse
-- [ ] Crear DTOs específicos: UserDto, BusinessDto, ServiceDto
-- [ ] Implementar validaciones con FluentValidation para cada DTO
-- [ ] Configurar AutoMapper para mapeo entre entidades y DTOs
-- [ ] Crear tests unitarios para controladores base
+- [ ] Crear `src/controllers/base.controller.ts` con métodos comunes
+- [ ] Crear `src/routes/user.routes.ts` y `src/controllers/user.controller.ts`
+- [ ] Crear `src/routes/business.routes.ts` y `src/controllers/business.controller.ts`
+- [ ] Implementar middleware de autenticación: `src/middleware/auth.middleware.ts`
+- [ ] Instalar Swagger: `npm install swagger-ui-express swagger-jsdoc` y `npm install -D @types/swagger-ui-express @types/swagger-jsdoc`
+- [ ] Configurar Swagger en `src/app.ts` con swagger-jsdoc
+- [ ] Crear DTOs base: `BaseResponse`, `PaginatedResponse` en `src/dto/common/`
+- [ ] Crear DTOs específicos: `UserDto`, `BusinessDto`, `ServiceDto`
+- [ ] Implementar validaciones con Zod para cada DTO
+- [ ] Crear utilidades de mapeo: `src/utils/mappers.ts` (sin AutoMapper)
+- [ ] Crear tests unitarios para controladores base con Jest
 
 **Entregables**:
-- Controladores base implementados
-- Middleware de autenticación funcionando
-- Swagger configurado y documentando APIs
-- DTOs base creados y validados
-- AutoMapper configurado
-- Tests unitarios pasando
+- ✅ Controladores base implementados
+- ✅ Middleware de autenticación funcionando
+- ✅ Swagger configurado y documentando APIs
+- ✅ DTOs base creados y validados
+- ✅ Mappers configurados
+- ✅ Tests unitarios pasando
 
 **Día 5: Testing Base**
-- [ ] Configurar xUnit
+- [ ] Configurar Jest
 - [ ] Crear tests unitarios básicos
-- [ ] Configurar Moq para mocking
+- [ ] Configurar mocking con Jest
 - [ ] Implementar tests de integración
 
 **Tareas Técnicas Detalladas**:
-- [ ] Instalar paquetes: xunit, xunit.runner.visualstudio, Moq, FluentAssertions
-- [ ] Configurar archivo de test .csproj
-- [ ] Crear estructura de carpetas para tests: Unit, Integration, TestHelpers
-- [ ] Crear clase base TestBase con configuración común
-- [ ] Crear tests unitarios para AuthService
-- [ ] Crear tests unitarios para UserService
-- [ ] Crear tests unitarios para BusinessService
-- [ ] Configurar Moq para mocking de interfaces
-- [ ] Crear tests de integración para AuthController
-- [ ] Configurar TestServer para tests de integración
+- [ ] Instalar paquetes: `npm install -D jest @types/jest ts-jest supertest @types/supertest`
+- [ ] Configurar `jest.config.js` o `jest.config.ts`
+- [ ] Crear estructura de carpetas para tests: `tests/unit`, `tests/integration`, `tests/fixtures`
+- [ ] Crear archivo base `tests/setup.ts` con configuración común
+- [ ] Crear tests unitarios para `AuthService`
+- [ ] Crear tests unitarios para `UserService`
+- [ ] Crear tests unitarios para `BusinessService`
+- [ ] Configurar Jest mocks para interfaces y dependencias
+- [ ] Crear tests de integración para `AuthController` con Supertest
+- [ ] Configurar test database o usar mocks
 
 **Entregables**:
-- xUnit configurado y funcionando
-- Tests unitarios para servicios principales
-- Moq configurado para mocking
-- Tests de integración funcionando
-- Estructura de testing organizada
-- Code coverage básico implementado
+- ✅ Jest configurado y funcionando
+- ✅ Tests unitarios para servicios principales
+- ✅ Jest mocks configurados
+- ✅ Tests de integración funcionando con Supertest
+- ✅ Estructura de testing organizada
+- ✅ Code coverage básico implementado
 
 #### **Semana 2: APIs Core**
 
 **Día 6: API de Usuarios**
 - [ ] CRUD completo de usuarios
-- [ ] Validaciones con FluentValidation
+- [ ] Validaciones con Zod
 - [ ] Tests unitarios
 - [ ] Documentación Swagger
 
 **Tareas Técnicas Detalladas**:
-- [ ] Implementar UserService con métodos CRUD
-- [ ] Crear UserRepository con operaciones de base de datos
-- [ ] Implementar UserController con endpoints: GET /api/users, POST /api/users, PUT /api/users/{id}, DELETE /api/users/{id}
-- [ ] Crear DTOs: CreateUserRequest, UpdateUserRequest, UserResponse
-- [ ] Implementar validaciones con FluentValidation para cada DTO
-- [ ] Agregar paginación en GET /api/users
+- [ ] Implementar `UserService` con métodos CRUD
+- [ ] Crear `UserRepository` con operaciones de base de datos (Prisma/TypeORM)
+- [ ] Implementar `UserController` con endpoints: GET `/api/users`, POST `/api/users`, PUT `/api/users/:id`, DELETE `/api/users/:id`
+- [ ] Crear DTOs: `CreateUserDto`, `UpdateUserDto`, `UserResponseDto`
+- [ ] Implementar validaciones con Zod para cada DTO en `src/validators/user.validator.ts`
+- [ ] Agregar paginación en GET `/api/users` con query params
 - [ ] Implementar búsqueda y filtros por nombre, email, rol
-- [ ] Crear tests unitarios para UserService
-- [ ] Crear tests de integración para UserController
-- [ ] Documentar endpoints en Swagger con atributos XML
+- [ ] Crear tests unitarios para `UserService` con Jest
+- [ ] Crear tests de integración para `UserController` con Supertest
+- [ ] Documentar endpoints en Swagger con JSDoc comments
 
 **Entregables**:
-- CRUD completo de usuarios funcionando
-- Validaciones implementadas y funcionando
-- Tests unitarios y de integración pasando
-- Documentación Swagger completa
-- Paginación y filtros implementados
-- Endpoints probados y validados
+- ✅ CRUD completo de usuarios funcionando
+- ✅ Validaciones con Zod implementadas y funcionando
+- ✅ Tests unitarios y de integración pasando
+- ✅ Documentación Swagger completa
+- ✅ Paginación y filtros implementados
+- ✅ Endpoints probados y validados
 
 **Día 7: API de Negocios**
 - [ ] CRUD de negocios

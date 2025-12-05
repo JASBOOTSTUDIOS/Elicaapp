@@ -1,6 +1,7 @@
 # 🎯 **Guía Completa para el MVP - ElicaApp**
 
 ## 🚀 **Objetivo del MVP**
+
 Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las funcionalidades core validadas por usuarios reales, en un plazo de 12 semanas.
 
 ---
@@ -8,32 +9,38 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 📋 **Funcionalidades Core del MVP**
 
 ### **1. Gestión de Negocios**
+
 - ✅ Registro y configuración inicial de negocio
 - ✅ Personalización visual básica (colores, logo)
 - ✅ Gestión de información del negocio
 
 ### **2. Sistema de Usuarios**
+
 - ✅ Registro y autenticación de usuarios
 - ✅ Roles y permisos básicos (dueño, empleado, cliente)
 - ✅ Perfiles de usuario configurables
 
 ### **3. Gestión de Servicios**
+
 - ✅ Crear, editar y eliminar servicios
 - ✅ Configurar precios y duración
 - ✅ Categorizar servicios por tipo
 
 ### **4. Sistema de Citas**
+
 - ✅ Calendario de disponibilidad
 - ✅ Reserva de citas por clientes
 - ✅ Confirmación y cancelación de citas
 - ✅ Notificaciones básicas
 
 ### **5. Dashboard por Rol**
+
 - ✅ Vista específica para dueños
 - ✅ Vista específica para empleados
 - ✅ Vista específica para clientes
 
 ### **6. Personalización Visual**
+
 - ✅ Cambio de colores principales
 - ✅ Carga y gestión de logo
 - ✅ Plantillas predefinidas
@@ -47,52 +54,61 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 1-2: FUNDACIÓN BACKEND**
 
 ### **Día 1-2: Configuración del Proyecto**
-- [ ] **Inicializar proyecto .NET Core**
-  - [ ] Crear solución ASP.NET Core Web API
-  - [ ] Configurar estructura de carpetas
-  - [ ] Configurar archivos de proyecto (.csproj)
-  - [ ] Configurar scripts de desarrollo
 
-- [ ] **Configurar C# y .NET**
-  - [ ] Configurar .NET 8.0 SDK
-  - [ ] Configurar archivos de configuración (appsettings.json)
+- [ ] **Inicializar proyecto Express.js + TypeScript**
+
+  - [ ] Crear proyecto con `npm init -y`
+  - [ ] Configurar estructura de carpetas (Clean Architecture)
+  - [ ] Configurar `package.json` con scripts
+  - [ ] Configurar `tsconfig.json` para TypeScript
+
+- [ ] **Configurar TypeScript y Node.js**
+
+  - [ ] Instalar Node.js 18+ LTS
+  - [ ] Configurar archivos de configuración (.env.example)
   - [ ] Configurar build y debugging
-  - [ ] Configurar linting con StyleCop
+  - [ ] Configurar linting con ESLint + Prettier
 
-- [ ] **Configurar ASP.NET Core**
-  - [ ] Configurar Program.cs y Startup
-  - [ ] Configurar middleware básico
+- [ ] **Configurar Express.js**
+  - [ ] Configurar `src/app.ts` y `src/server.ts`
+  - [ ] Configurar middleware básico (cors, helmet, morgan)
   - [ ] Configurar CORS y seguridad básica
-  - [ ] Configurar logging con Serilog
+  - [ ] Configurar logging con Winston
 
 ### **Día 3-4: Base de Datos y ORM**
-- [ ] **Configurar PostgreSQL**
-  - [ ] Instalar y configurar PostgreSQL
-  - [ ] Crear base de datos de desarrollo
-  - [ ] Configurar connection string en appsettings.json
-  - [ ] Configurar conexión desde ASP.NET Core
 
-- [ ] **Configurar Entity Framework Core**
-  - [ ] Instalar paquetes NuGet de EF Core
-  - [ ] Configurar DbContext
+- [ ] **Configurar PostgreSQL (Supabase)**
+
+  - [ ] Crear proyecto en Supabase Cloud
+  - [ ] Configurar variables de entorno (DATABASE_URL)
+  - [ ] Configurar connection string en `.env`
+  - [ ] Configurar conexión desde Express.js
+
+- [ ] **Configurar Prisma o TypeORM**
+  - [ ] Instalar Prisma (`npm install prisma @prisma/client`) O TypeORM
+  - [ ] Configurar schema Prisma o entidades TypeORM
   - [ ] Configurar conexión a base de datos
   - [ ] Crear primer modelo de prueba
 
 ### **Día 5-7: Autenticación y Seguridad**
-- [ ] **Implementar JWT + Identity**
-  - [ ] Instalar paquetes NuGet de Identity
-  - [ ] Configurar Identity con JWT
+
+- [ ] **Implementar JWT + Supabase Auth**
+
+  - [ ] Instalar paquetes: `jsonwebtoken`, `bcryptjs`, `@supabase/supabase-js`
+  - [ ] Configurar JWT con express-jwt
   - [ ] Implementar login/registro
   - [ ] Configurar refresh tokens
 
 - [ ] **Middleware de Seguridad**
-  - [ ] Implementar rate limiting con AspNetCoreRateLimit
-  - [ ] Configurar headers de seguridad
-  - [ ] Implementar validación con FluentValidation
+  - [ ] Implementar rate limiting con express-rate-limit
+  - [ ] Configurar headers de seguridad con helmet
+  - [ ] Implementar validación con Zod
   - [ ] Configurar CORS apropiadamente
 
 ### **Día 8-10: APIs Base**
+
 - [ ] **API de Usuarios**
+
   - [ ] CRUD completo de usuarios
   - [ ] Validaciones de entrada
   - [ ] Tests unitarios básicos
@@ -105,11 +121,13 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Tests unitarios
 
 ### **Día 11-14: Testing y Documentación**
+
 - [ ] **Configurar Testing**
-  - [ ] Instalar xUnit, Moq y FluentAssertions
-  - [ ] Configurar tests de integración
+
+  - [ ] Instalar Jest, @types/jest, supertest
+  - [ ] Configurar tests de integración con Supertest
   - [ ] Crear tests para APIs existentes
-  - [ ] Configurar coverage reports con Coverlet
+  - [ ] Configurar coverage reports con Jest --coverage
 
 - [ ] **Documentación de APIs**
   - [ ] Configurar Swagger/OpenAPI
@@ -122,7 +140,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 3-4: FUNDACIÓN FRONTEND**
 
 ### **Día 15-17: Configuración React Native**
+
 - [ ] **Inicializar Proyecto Expo**
+
   - [ ] Crear proyecto con Expo CLI
   - [ ] Configurar TypeScript
   - [ ] Configurar ESLint y Prettier
@@ -135,7 +155,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Configurar alias de imports
 
 ### **Día 18-21: Componentes Base**
+
 - [ ] **Sistema de Componentes**
+
   - [ ] Crear Button component nativo
   - [ ] Crear Input component nativo
   - [ ] Crear Modal component nativo
@@ -149,7 +171,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Crear componentes con temas
 
 ### **Día 22-24: Navegación y Pantallas**
+
 - [ ] **Configurar React Navigation**
+
   - [ ] Configurar navegación por tabs
   - [ ] Implementar navegación por stack
   - [ ] Crear layout principal
@@ -162,7 +186,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Crear layout de dashboard
 
 ### **Día 25-28: Integración y Testing**
+
 - [ ] **Integración con Backend**
+
   - [ ] Configurar axios para HTTP requests
   - [ ] Implementar interceptors para JWT
   - [ ] Crear servicios de API
@@ -179,8 +205,10 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 5-6: FUNCIONALIDADES CORE**
 
 ### **Día 29-31: Backend - Sistema de Citas**
+
 - [ ] **API de Citas**
-  - [ ] Crear modelo de citas en Entity Framework
+
+  - [ ] Crear modelo de citas en Prisma/TypeORM
   - [ ] Implementar CRUD de citas
   - [ ] Validaciones de disponibilidad
   - [ ] Tests de integración
@@ -192,7 +220,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Tests de notificaciones
 
 ### **Día 32-35: Frontend - Gestión de Citas**
+
 - [ ] **Calendario de Citas**
+
   - [ ] Implementar calendario nativo
   - [ ] Crear vista de disponibilidad
   - [ ] Implementar reserva de citas
@@ -205,7 +235,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Implementar búsqueda
 
 ### **Día 36-42: Integración y Testing**
+
 - [ ] **Testing de Integración**
+
   - [ ] Tests de flujos completos
   - [ ] Tests de APIs
   - [ ] Tests de UI
@@ -222,8 +254,10 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 7-8: PERSONALIZACIÓN Y TEMAS**
 
 ### **Día 43-45: Backend - Sistema de Temas**
+
 - [ ] **API de Temas**
-  - [ ] Crear modelo de temas en Entity Framework
+
+  - [ ] Crear modelo de temas en Prisma/TypeORM
   - [ ] Implementar CRUD de temas
   - [ ] Sistema de archivos para logos
   - [ ] Validaciones de temas
@@ -235,7 +269,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Tests de sistema de archivos
 
 ### **Día 46-49: Frontend - Editor de Temas**
+
 - [ ] **Editor Visual**
+
   - [ ] Crear editor de colores nativo
   - [ ] Implementar preview en tiempo real
   - [ ] Crear selector de plantillas
@@ -248,7 +284,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Implementar búsqueda de plantillas
 
 ### **Día 50-56: Testing y Optimización**
+
 - [ ] **Testing Completo**
+
   - [ ] Tests E2E con Detox
   - [ ] Tests de accesibilidad
   - [ ] Tests de performance
@@ -265,7 +303,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 9-10: INTEGRACIÓN COMPLETA**
 
 ### **Día 57-59: Integración Backend-Frontend**
+
 - [ ] **Integración de APIs**
+
   - [ ] Conectar todas las APIs
   - [ ] Implementar manejo de errores
   - [ ] Configurar loading states
@@ -278,7 +318,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Manejo de estado offline
 
 ### **Día 60-63: Testing de Integración**
+
 - [ ] **Tests de Flujos Completos**
+
   - [ ] Test de registro completo
   - [ ] Test de creación de negocio
   - [ ] Test de reserva de cita
@@ -291,7 +333,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Test de memoria
 
 ### **Día 64-70: Optimización y Pulido**
+
 - [ ] **Optimización de Performance**
+
   - [ ] Optimizar bundle size
   - [ ] Implementar lazy loading
   - [ ] Optimizar imágenes
@@ -308,7 +352,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## **SEMANA 11-12: DESPLIEGUE A PRODUCCIÓN**
 
 ### **Día 71-73: Preparación de Producción**
+
 - [ ] **Configuración de Producción**
+
   - [ ] Configurar variables de entorno
   - [ ] Configurar base de datos de producción
   - [ ] Configurar SSL y dominio
@@ -321,7 +367,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Scripts de backup
 
 ### **Día 74-77: Testing de Producción**
+
 - [ ] **Tests en Producción**
+
   - [ ] Test de funcionalidades core
   - [ ] Test de performance
   - [ ] Test de seguridad
@@ -334,7 +382,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
   - [ ] Configurar dashboards
 
 ### **Día 78-84: Lanzamiento y Post-Lanzamiento**
+
 - [ ] **Lanzamiento**
+
   - [ ] Desplegar a producción
   - [ ] Configurar monitoreo
   - [ ] Configurar backup automático
@@ -351,15 +401,17 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 🛠️ **Stack Tecnológico del MVP**
 
 ### **Backend**
-- **Runtime**: .NET 8.0+
-- **Framework**: ASP.NET Core Web API
+
+- **Runtime**: Node.js 18+ LTS
+- **Framework**: Express.js 4.18+
 - **Base de Datos**: Supabase (PostgreSQL 15+)
-- **ORM**: Entity Framework Core
-- **Autenticación**: JWT + Identity
-- **Testing**: xUnit + Moq + FluentAssertions
+- **ORM**: Prisma 5.0+ o TypeORM 0.3+
+- **Autenticación**: JWT + Supabase Auth
+- **Testing**: Jest + Supertest
 - **Documentación**: Swagger/OpenAPI
 
 ### **Frontend**
+
 - **Framework**: React Native 0.73+
 - **Lenguaje**: TypeScript
 - **Estilos**: NativeWind (Tailwind para React Native)
@@ -369,6 +421,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 - **Build**: Expo CLI + EAS Build
 
 ### **DevOps**
+
 - **Contenedores**: Docker
 - **CI/CD**: GitHub Actions
 - **Hosting**: Vercel/Netlify (frontend) + Railway/Render (backend)
@@ -380,24 +433,28 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 📊 **Métricas de Éxito del MVP**
 
 ### **Funcionalidad**
+
 - [ ] 100% de features core funcionando
 - [ ] 0 bugs críticos en producción
 - [ ] 100% de APIs documentadas
 - [ ] 100% de flujos de usuario funcionando
 
 ### **Performance**
+
 - [ ] Tiempo de carga < 2 segundos
 - [ ] Tiempo de respuesta de APIs < 200ms
 - [ ] Lighthouse score > 90
 - [ ] Core Web Vitals en verde
 
 ### **Testing**
+
 - [ ] Cobertura de código > 90%
 - [ ] Tests unitarios pasando 100%
 - [ ] Tests de integración pasando 100%
 - [ ] Tests E2E pasando 100%
 
 ### **Usabilidad**
+
 - [ ] MVP validado por 50+ usuarios
 - [ ] NPS > 50
 - [ ] Tiempo de configuración < 30 minutos
@@ -408,7 +465,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 🔄 **Proceso de Validación del MVP**
 
 ### **Validación Interna**
+
 1. **Testing del Equipo**
+
    - [ ] Todos los desarrolladores prueban la plataforma
    - [ ] QA valida todos los flujos
    - [ ] Product Owner valida funcionalidades
@@ -421,7 +480,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
    - [ ] Sistema de autenticación funcionando
 
 ### **Validación Externa**
+
 1. **Usuarios Beta**
+
    - [ ] 10 usuarios beta prueban la plataforma
    - [ ] Feedback recopilado y analizado
    - [ ] Bugs críticos identificados y corregidos
@@ -438,6 +499,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 📚 **Documentación Requerida para el MVP**
 
 ### **Documentación Técnica**
+
 - [ ] README del proyecto
 - [ ] Guía de instalación y configuración
 - [ ] Documentación de APIs
@@ -445,6 +507,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 - [ ] Guía de troubleshooting
 
 ### **Documentación de Usuario**
+
 - [ ] Guía de usuario final
 - [ ] Tutorial de configuración inicial
 - [ ] FAQ
@@ -452,6 +515,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 - [ ] Base de conocimientos
 
 ### **Documentación de Operaciones**
+
 - [ ] Runbook de operaciones
 - [ ] Procedimientos de backup
 - [ ] Procedimientos de rollback
@@ -463,16 +527,19 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 🚨 **Riesgos y Mitigaciones del MVP**
 
 ### **Riesgos Técnicos**
+
 - **Base de datos lenta**: Implementar índices y optimizaciones
 - **APIs lentas**: Implementar cache y optimizaciones
 - **Frontend lento**: Implementar lazy loading y optimizaciones
 
 ### **Riesgos de Negocio**
+
 - **Usuarios no adoptan**: Validar con usuarios beta antes del lanzamiento
 - **Funcionalidades faltantes**: Priorizar features core vs. nice-to-have
 - **Timeline se extiende**: Tener plan de contingencia y MVP reducido
 
 ### **Riesgos de Operaciones**
+
 - **Sistema se cae**: Implementar monitoreo y alertas
 - **Datos se pierden**: Implementar backup automático
 - **Performance degrada**: Implementar métricas y alertas
@@ -482,6 +549,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 📞 **Contacto y Soporte del MVP**
 
 ### **Equipo del MVP**
+
 - **Product Owner**: [Nombre] - [Email]
 - **Tech Lead**: [Nombre] - [Email]
 - **Frontend Lead**: [Nombre] - [Email]
@@ -489,6 +557,7 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 - **DevOps Lead**: [Nombre] - [Email]
 
 ### **Canales de Comunicación**
+
 - **Slack**: #mvp-elicaapp
 - **Email**: mvp@elicaapp.com
 - **Jira**: Proyecto MVP-ElicaApp
@@ -499,7 +568,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
 ## 🎯 **Próximos Pasos Después del MVP**
 
 ### **Inmediato (1-2 semanas post-MVP)**
+
 1. **Análisis de Feedback**
+
    - Recopilar feedback de usuarios
    - Analizar métricas de uso
    - Identificar áreas de mejora
@@ -512,7 +583,9 @@ Desarrollar y lanzar en producción una plataforma funcional de ElicaApp con las
    - Training del equipo en nuevas tecnologías
 
 ### **Corto Plazo (1 mes post-MVP)**
+
 1. **Implementación de Mejoras**
+
    - Corregir bugs identificados
    - Implementar features de alta prioridad
    - Optimizar performance

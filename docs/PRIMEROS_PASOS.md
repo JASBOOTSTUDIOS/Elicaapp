@@ -11,9 +11,9 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 **ElicaApp** es una plataforma integral para la gestión de negocios de servicios (salones de belleza, peluquerías, restaurantes, etc.) que permite a cada negocio personalizar completamente su interfaz para reflejar su marca e identidad.
 
 ### **🏗️ Arquitectura Técnica**
-- **Backend**: .NET Core 8.0+ con ASP.NET Core Web API
+- **Backend**: Express.js 4.18+ con TypeScript 5.0+
 - **Frontend**: React Native 0.73+ con Expo y TypeScript  
-- **Base de Datos**: Supabase (PostgreSQL 15+) con Entity Framework Core
+- **Base de Datos**: Supabase (PostgreSQL 15+) con Prisma/TypeORM
 - **DevOps**: Docker, GitHub Actions, CI/CD automatizado
 
 ---
@@ -22,14 +22,14 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 
 ### **👨‍💻 Si Eres Desarrollador**
 
-#### **🚀 Desarrollador Backend (.NET Core)**
+#### **🚀 Desarrollador Backend (Express.js + TypeScript)**
 1. **Empezar aquí**: [README Backend](backend/README.md)
 2. **Arquitectura**: [Arquitectura del Sistema](backend/ARQUITECTURA.md)
 3. **Sprints**: [Sprints del Backend](backend/SPRINTS_BACKEND.md)
 4. **Historias**: [Historias de Usuario Backend](backend/HISTORIAS_USUARIO.md)
 
 **Próximos pasos inmediatos**:
-- Configurar proyecto .NET Core
+- Configurar proyecto Express.js + TypeScript
 - Conectar con Supabase
 - Implementar autenticación JWT
 - Crear APIs base del MVP
@@ -54,7 +54,7 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 - Configurar proyecto Supabase
 - Crear esquemas base de datos
 - Implementar RLS policies
-- Configurar migraciones EF Core
+- Configurar migraciones Prisma/TypeORM
 
 ### **👥 Si Eres Product Owner o Scrum Master**
 
@@ -88,13 +88,13 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 
 ### **📅 Semana 1: Configuración Base**
 - **Día 1-2**: Setup de Supabase y configuración de base de datos
-- **Día 3-4**: Setup de proyecto .NET Core y estructura base
+- **Día 3-4**: Setup de proyecto Express.js + TypeScript y estructura base
 - **Día 5**: Setup de proyecto React Native con Expo
 
 ### **📅 Semana 2-3: Backend Core**
 - Implementar autenticación JWT
 - Crear APIs base (usuarios, negocios, servicios)
-- Configurar Entity Framework Core
+- Configurar Prisma/TypeORM
 - Implementar tests unitarios
 
 ### **📅 Semana 4-5: Frontend Core**
@@ -120,10 +120,11 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 ## 🔧 **Herramientas Necesarias**
 
 ### **🛠️ Desarrollo Backend**
-- Visual Studio 2022 o VS Code
-- .NET 8.0 SDK
-- SQL Server Management Studio o Azure Data Studio
+- VS Code o WebStorm
+- Node.js 18+ LTS
+- npm / yarn / pnpm
 - Postman o Insomnia para testing de APIs
+- TypeScript 5.0+
 
 ### **📱 Desarrollo Frontend**
 - Node.js 18+
@@ -134,7 +135,7 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 ### **🗄️ Base de Datos**
 - Supabase CLI
 - pgAdmin o DBeaver
-- Entity Framework Core tools
+- Prisma CLI o TypeORM CLI
 
 ### **🚀 DevOps**
 - Docker Desktop
@@ -151,7 +152,7 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 3. **[Stack Tecnológico](STACK_TECNOLOGICO.md)** - Tecnologías y herramientas
 
 ### **🏗️ Documentos de Arquitectura**
-1. **[Arquitectura Backend](backend/ARQUITECTURA.md)** - Clean Architecture + SOLID
+1. **[Arquitectura Backend](backend/ARQUITECTURA.md)** - Clean Architecture + SOLID + Express.js
 2. **[Stack React Native](STACK_REACT_NATIVE.md)** - Frontend detallado
 3. **[Stack Supabase](STACK_SUPABASE.md)** - Base de datos cloud
 
@@ -186,10 +187,12 @@ Si es la primera vez que ves este proyecto, este documento te guiará paso a pas
 ## 🆘 **¿Necesitas Ayuda?**
 
 ### **📖 Recursos de Aprendizaje**
-- [Documentación .NET 8](https://docs.microsoft.com/en-us/dotnet/)
+- [Documentación Express.js](https://expressjs.com/)
+- [Documentación TypeScript](https://www.typescriptlang.org/)
 - [React Native Docs](https://reactnative.dev/)
 - [Supabase Docs](https://supabase.com/docs)
 - [Expo Docs](https://docs.expo.dev/)
+- [Prisma Docs](https://www.prisma.io/docs)
 
 ### **🔗 Enlaces del Proyecto**
 - [Índice Principal](INDICE_PRINCIPAL.md) - Navegación completa

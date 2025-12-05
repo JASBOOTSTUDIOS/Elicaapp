@@ -29,6 +29,7 @@
 - [Monitoreo y Observabilidad](./MONITOREO_DB.md) - Dashboards y métricas
 
 ### **📚 Recursos y Referencias**
+- [Funciones y Triggers en PostgreSQL](./FUNCIONES_TRIGGERS_POSTGRESQL.md) - Guía completa de funciones y triggers
 - [Documentación Supabase](./REFERENCIAS_SUPABASE.md) - Enlaces oficiales
 - [Patrones de Base de Datos](./PATRONES_DB.md) - Mejores prácticas
 - [Troubleshooting](./TROUBLESHOOTING_DB.md) - Problemas comunes
@@ -74,5 +75,5 @@
 
 ---
 
-*Última actualización: Agosto 2025*
+*Última actualización: Diciembre 2025*
 *Versión: v1.0.0*
